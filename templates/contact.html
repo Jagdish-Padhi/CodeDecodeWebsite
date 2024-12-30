@@ -1,0 +1,115 @@
+{% extends "base.html" %} {% block title %}Contact{% endblock title %} {% block body %}
+<div
+  class="card"
+  style="width: 18rem; background-color: black; color: white; width: 100vw"
+>
+  <img
+    style="height: 450px"
+    src="https://png.pngtree.com/background/20230610/original/pngtree-vintage-telephone-sitting-on-a-dark-table-with-old-telephone-cord-picture-image_3015839.jpg"
+    class="card-img-top"
+    alt="..."
+  />
+  <div
+    class="card-body"
+    style="position: absolute; text-align:center;  width:100%; margin-top: 23rem"
+  >
+    <p class="card-text">
+      <b>Contact Us</b>
+    </p>
+  </div>
+</div>
+
+{% comment %} form to contact {% endcomment %}
+
+<div  style="color:white; text-align:center; margin-top:2rem;"><p><b>For any query fill the form below.</b></p></div>
+
+<form
+method = "post" action="/contact"
+  class="row g-3"
+  style="background-color: black; color: white; margin: 5rem; "
+> {% csrf_token %}
+  <div class="col-md-12">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Enter your full name here"
+    />
+  </div>
+
+
+  <div class="col-md-12">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="text"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="example: abc123@gmail.com"
+    />
+  </div>
+
+
+
+  <div class="col-md-12">
+    <label for="phone" class="form-label">Phone</label>
+    <input
+      type="text"
+      class="form-control"
+      name="phone"
+      id="phone"
+      placeholder="enter your active phone number"
+    />
+  </div>
+
+
+  <div class="col-12">
+    <label for="institute" class="form-label">Institute or Company</label>
+    <input
+      type="text"
+      class="form-control"
+      id="institute"
+      name="institute"
+      placeholder="Enter your current institue / company name"
+    />
+  </div>
+
+
+  <div class="col-12">
+    <label for="problem" class="form-label">Query</label>
+    <input
+      type="text"
+      class="form-control"
+      id="problem"
+      name="problem"
+      placeholder="Discuss main issue here"
+    />
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="agreed"
+        name="agreed"
+      />
+      <label class="form-check-label" for="gridCheck">
+        I agree that details entered are correct.
+      </label>
+    </div>
+  </div>
+  <div class="col-12" style="text-align:center;">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      name="submit"
+    >
+      <b>Submit</b>
+    </button>
+  </div>
+</form>
+
+{% endblock body %}
